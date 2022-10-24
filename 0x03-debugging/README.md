@@ -1,1 +1,1 @@
-this is a debugging assignment
+This is a more functions C loops
