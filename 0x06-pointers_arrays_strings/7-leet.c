@@ -6,7 +6,7 @@
  *
  * Return: address of s
  */
-char *leet(char *)
+char *leet(char *s)
 {
 	int i, j;
 	char a[] = "aAeEoOtTlL";
@@ -20,4 +20,6 @@ char *leet(char *)
 				s[i] = b[j];
 		}
 	}
+	return (s);
+}
 
