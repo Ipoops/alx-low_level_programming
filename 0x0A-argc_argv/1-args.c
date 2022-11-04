@@ -1,20 +1,16 @@
 #include <stdio.h>
 
-/** this programs prints the count of arguments
- *@argc
- *@argv
- *count
- *Return - count
+/**
+ * main - this programs prints the count of arguments
+ *@argc: argument count
+ *@argv: arguments
+ *
+ *Return: 0
  */
 int main(int argc, char *argv[])
 {
-	int count;
+	(void)argv;
 
-	argc = 1;
-	
-	for (count = 1; count < argc; count++)
-		{
-			printf("%d\n", count);
-		}
+	printf("%d\n", argc - 1);
 	return (0);
 }
