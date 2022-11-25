@@ -1,8 +1,11 @@
-n#include "dog.h"
-#include <stdio.h>
+#include "dog.h"
+#include <stdlib.h>
 /**
- * print_dog - prints a dog
- * @d: dog to print
+ * new_dog - creates a new dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ *
  * Return: void
  */
 void print_dog(struct dog *d)
