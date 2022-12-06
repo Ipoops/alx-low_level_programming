@@ -12,28 +12,26 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd;
 
 	char *buf;
-	buf = malloc(sizeof(char*) * letters);
-
+	
 	if (filename == NULL)
 		return (0);
-	else
+
+	buf = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
+
+	o = open(filename, O_RDONLY);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
+
+	if ( o == -1 || r == -1 || w == -1 || w != r )
 	{
-
-	
-		fd = open(filename, O_RDONLY);
-
-		if (fd == -1)
-		{
-			printf("Failed to open and read the file.\n");
-			exit(1);
-		}
-
-		read(fd, buf, letters);
-	
-		close(fd);
+		free(buf);
+		return (0);
 	}
 	free (buf);
-	printf( "%s\n", buf);
-	return (letters);
+	close(o);
+
+	return (w);
 }
 
